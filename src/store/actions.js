@@ -1,34 +1,5 @@
-export const addTask = (task) => {
-  return {
-    type: "ADD_TASK",
-    payload: {
-      task: task,
-    },
-  };
-};
+import { createAction } from "@reduxjs/toolkit";
 
-export const removeTask = (id) => {
-  return {
-    type: "REMOVE_TASK",
-    payload: {
-      id: id,
-    },
-  };
-};
-
-export const markCompleted = (id) => {
-  return {
-    type: "TASK_COMPLETED",
-    payload: {
-      id: id,
-    },
-  };
-};
-
-export const fetchTodo = () => {
-  return async (dispach, getState) => {
-    const resonse = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-    const task = await resonse.json();
-    dispach(addTask(task.title));
-  };
-};
+export const addTask = createAction("ADD_TASK");
+export const removeTask = createAction("REMOVE_TASK");
+export const markCompleted = createAction("TASK_COMPLETED");

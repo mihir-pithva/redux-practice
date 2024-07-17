@@ -1,20 +1,12 @@
 import { store } from "./store/store";
-import { addTask, fetchTodo, markCompleted, removeTask } from "./store/actions";
+import { addTask, markCompleted, removeTask } from "./store/actions";
 
 store.subscribe(() => {
   console.log(store.getState());
 });
-console.log(store.getState());
 
-store.dispatch(addTask("task 1"));
+store.dispatch(addTask({ task: "TASK 1" }));
 
-console.log(store.getState());
+store.dispatch(markCompleted({ id: 1 }));
 
-store.dispatch(markCompleted(1));
-
-console.log(store.getState());
-
-store.dispatch(fetchTodo());
-
-console.log(store.getState());
-
+store.dispatch(removeTask({ id: 1 }));
