@@ -6,10 +6,12 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-store.dispatch(addEmployee({ name: "mihir" }));
+// store.dispatch(addEmployee({ name: "mihir" }));
 
-store.dispatch(removeEmployee({ id: 1 }));
+// store.dispatch(removeEmployee({ id: 1 }));
 
-store.dispatch(addTask({ task: "TASK 1" }));
+// store.dispatch(addTask({ task: "TASK 1" }));
 
-store.dispatch(removeTask({ id: 1 }));
+// store.dispatch(removeTask({ id: 1 }));
+
+store.dispatch({ type: "SHOW_ERROR", payload: { error: "User not found" } });
