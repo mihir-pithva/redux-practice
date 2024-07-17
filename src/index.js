@@ -1,5 +1,5 @@
+import { addTask, markCompleted, removeTask } from "./store/reducer";
 import { store } from "./store/store";
-import { addTask, markCompleted, removeTask } from "./store/actions";
 
 store.subscribe(() => {
   console.log(store.getState());
